@@ -25,22 +25,22 @@ DCI is an advanced IP-changing script that dynamically alters your IP address at
 
 ## **🚀 Setup & Installation**
 
-Step 1: Install Termux
+**🧩Step 1:** Install Termux
 
 Download Termux from F-Droid (Recommended) or Play Store.
 
 
-Step 2: Download the Script
+**🧩Step 2:** Download the Script
 
 Run the following command in Termux:
 
 curl -L -o DCI.sh https://raw.githubusercontent.com/mikey-7x/DCI/main/DCI.sh
 
-Step 3: Give Execution Permission
+**🧩Step 3:** Give Execution Permission
 
 chmod +x DCI.sh
 
-Step 4: Run the Script
+**🧩Step 4:** Run the Script
 
 Start DCI by executing:
 
