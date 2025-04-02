@@ -1,86 +1,93 @@
 # DCI
-Dynamic Chameleon ip (DCI) by mikey-7x
+DCI - Dynamic Chameleon IP
 
-📌 About
+🦎 Dynamic Chameleon IP (DCI) by mikey-7x
 
-Dynamic Chameleon IP (DCI) is an advanced IP rotation script designed for Termux on Android. It dynamically changes your IP address using multiple Tor nodes and Privoxy, ensuring frequent and verified IP changes for privacy and anonymity. Unlike traditional methods, it does not rely on VPNs or Airplane Mode toggling.
-
-🚀 Features
-
-✅ Fast IP Rotation – Get a new IP every few seconds.
-
-✅ Auto Verification – Ensures IP actually changes before proceeding.
-
-✅ Multi-Tor Nodes – Uses multiple Tor circuits for better reliability.
-
-✅ Privoxy Proxy Support – Routes traffic securely via HTTP Proxy (127.0.0.1:8118).
-
-✅ Failsafe Mechanism – Retries instantly if the IP remains unchanged.
-
-✅ Lightweight & Efficient – Works smoothly even on low-end devices.
+DCI is an advanced IP-changing script that dynamically alters your IP address at specified intervals using the Tor network. It enhances privacy, security, and anonymity while browsing the internet.
 
 
-📦 Installation
+---
 
-1. Download & Give Execution Permission:
+✨ Features
 
-curl -O https://your-repo-link/IpChange.sh
-chmod +x IpChange.sh
-
-
-2. Run the Script:
-
-./IpChange.sh
-
+✔ No VPN or Airplane Mode Required – Works without toggling airplane mode or using VPN services.
+✔ Automated IP Rotation – Changes IP at user-defined intervals for enhanced anonymity.
+✔ Multi-Tor Instance Setup – Uses multiple Tor circuits for faster, more reliable IP changes.
+✔ Privoxy Proxy Support – Allows browser & app integration for seamless anonymous browsing.
+✔ Works Directly in Termux – No need for a separate Linux environment.
+✔ Lightweight & Fast Execution – Optimized for minimal resource usage.
 
 
-🔄 How It Works
+---
 
-1. Starts multiple Tor instances with separate SocksPorts.
+🚀 Setup & Installation
 
+Step 1: Install Termux
 
-2. Configures Privoxy to route traffic via Tor nodes.
-
-
-3. Continuously sends new identity signals to force new IPs.
+Download Termux from F-Droid (Recommended) or Play Store.
 
 
-4. Verifies if the IP has actually changed.
+Step 2: Download the Script
 
+Run the following command in Termux:
 
-5. If the IP remains the same, it forces an immediate retry.
+curl -L -o DCI.sh https://raw.githubusercontent.com/mikey-7x/DCI/main/DCI.sh
 
+Step 3: Give Execution Permission
 
+chmod +x DCI.sh
 
-⚙️ Usage
+Step 4: Run the Script
 
-Manual Start:
+Start DCI by executing:
 
-./IpChange.sh
+./DCI.sh
 
-Set Custom Rotation Interval: (Minimum 3 seconds)
+The script will prompt you to enter an IP rotation interval (e.g., 10 seconds).
 
-Enter IP rotation interval (in seconds, min 3s): [YOUR VALUE]
+It will take a few seconds to establish a new IP using the Tor network.
 
-Using the Proxy in Apps or Scripts:
-
-HTTP Proxy: 127.0.0.1:8118
-
-Socks5 Proxy (optional): 127.0.0.1:9050
+Once ready, it will display the proxy address (127.0.0.1) and port (e.g., 8118).
 
 
 
-🛠 Troubleshooting
+---
 
-IP not changing?
+🌐 Configuring Proxy on Android (For Browsing)
 
-Ensure Tor is running properly (tor --version to check installation).
-
-Try increasing the rotation interval slightly.
-
-Restart Termux and rerun the script.
+1. Open Wi-Fi Settings on your Android device.
 
 
+2. Tap on the connected Wi-Fi network and select Modify Network.
+
+
+3. Scroll to Proxy Settings → Change from None to Manual.
+
+
+4. Enter the Hostname as 127.0.0.1 and Port as 8118.
+
+
+5. Save settings and exit.
+
+
+6. Open a browser and visit What Is My IP to verify your new IP.
+
+
+
+
+---
+
+⚡ Performance & Optimization
+
+The time taken to change the IP depends on device speed & network conditions.
+
+Some IPs may take longer to rotate; the script ensures real-time verification.
+
+Using multiple Tor instances enhances speed and reliability.
+
+
+
+---
 
 📜 License
 
@@ -88,10 +95,7 @@ This project is open-source and free to use for educational and privacy purposes
 
 📢 Credits
 
-Developed by mikey-7x (Yogesh) For queries, reach out via GitHub or forums!
+Developed by mikey-7x (Yogesh). For queries, reach out via GitHub or forums!
 
-
----
-
-💡 "Stay Anonymous, Stay Secure!"
+💡 "Stay Anonymous, Stay Secure!" 🔥
 
