@@ -1,12 +1,12 @@
 # DCI
-#**🦎 Dynamic Chameleon IP (DCI) by mikey-7x**
+🦎 Dynamic Chameleon IP (DCI) by mikey-7x
 
 DCI is an advanced IP-changing script that dynamically alters your IP address at specified intervals using the Tor network. It enhances privacy, security, and anonymity while browsing the internet.
 
 
 ---
 
-##**✨ Features**
+#✨ Features
 
 ✔ No VPN or Airplane Mode Required – Works without toggling airplane mode or using VPN services.
 ✔ Automated IP Rotation – Changes IP at user-defined intervals for enhanced anonymity.
@@ -18,7 +18,7 @@ DCI is an advanced IP-changing script that dynamically alters your IP address at
 
 ---
 
-##**🚀 Setup & Installation**
+##🚀 Setup & Installation
 
 Step 1: Install Termux
 
