@@ -1,12 +1,12 @@
 # DCI
-🦎 Dynamic Chameleon IP (DCI) by mikey-7x
+#**🦎 Dynamic Chameleon IP (DCI) by mikey-7x**
 
 DCI is an advanced IP-changing script that dynamically alters your IP address at specified intervals using the Tor network. It enhances privacy, security, and anonymity while browsing the internet.
 
 
 ---
 
-✨ Features
+##**✨ Features**
 
 ✔ No VPN or Airplane Mode Required – Works without toggling airplane mode or using VPN services.
 ✔ Automated IP Rotation – Changes IP at user-defined intervals for enhanced anonymity.
@@ -18,7 +18,7 @@ DCI is an advanced IP-changing script that dynamically alters your IP address at
 
 ---
 
-🚀 Setup & Installation
+##**🚀 Setup & Installation**
 
 Step 1: Install Termux
 
@@ -51,7 +51,7 @@ Once ready, it will display the proxy address (127.0.0.1) and port (e.g., 8118).
 
 ---
 
-🌐 Configuring Proxy on Android (For Browsing)
+##**🌐 Configuring Proxy on Android (For Browsing)**
 
 1. Open Wi-Fi Settings on your Android device.
 
@@ -75,7 +75,7 @@ Once ready, it will display the proxy address (127.0.0.1) and port (e.g., 8118).
 
 ---
 
-⚡ Performance & Optimization
+##**⚡ Performance & Optimization**
 
 The time taken to change the IP depends on device speed & network conditions.
 
@@ -87,11 +87,11 @@ Using multiple Tor instances enhances speed and reliability.
 
 ---
 
-📜 License
+##**📜 License**
 
 This project is open-source and free to use for educational and privacy purposes. 🚀
 
-📢 Credits
+##**📢 Credits**
 
 Developed by mikey-7x (Yogesh). For queries, reach out via GitHub or forums!
 
