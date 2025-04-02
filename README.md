@@ -91,9 +91,9 @@ Using multiple Tor instances enhances speed and reliability.
 
 This project is open-source and free to use for educational and privacy purposes. 🚀
 
-##**📢 Credits**
-
-Developed by mikey-7x (Yogesh). For queries, reach out via GitHub or forums!
+## **📜 Credits**  
+Developed by **[mikey-7x](https://github.com/mikey-7x)** 🚀🔥  
+ For queries, reach out via GitHub or forums!
 
 💡 "Stay Anonymous, Stay Secure!" 🔥
 
