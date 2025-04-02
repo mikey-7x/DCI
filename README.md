@@ -6,6 +6,12 @@ DCI is an advanced IP-changing script that dynamically alters your IP address at
 
 ---
 
+## **👁️‍🗨️Practical Implementation Video**  
+Watch the Dynamic Chameleon ip (DCI) setup and execution in action:  
+[![RTOD-yv8 YouTube Video](https://img.youtube.com/vi/RcVl_N31GGs/0.jpg)](https://youtu.be/RcVl_N31GGs)  
+
+---
+
 ## **✨ Features**
 
 ✔ No VPN or Airplane Mode Required – Works without toggling airplane mode or using VPN services.
