@@ -1,6 +1,7 @@
 #!/bin/bash
-# Dynamic Chameleon IP by mikey-7x (yogesh)
+# Dynamic Chameleon IP by mikey-7x (yogesh)                           pkg install chafa -y
 pkg install chafa -y
+
 # -------------------------------
 # 🔥 Title and Branding
 # -------------------------------
@@ -14,51 +15,41 @@ RESET="\e[0m"
 # Display the 3D Chameleon Image using `chafa`
 chafa "/storage/emulated/0/Pictures/3D DCI.PNG" --symbols=block
 echo ""
-#echo -e "\e[31m┌───────────────────────────────────────────────┐\e[0m"
-#echo -e "\e[31m│    \e[0m Dynamic Chameleon IP by mikey-7x (yogesh) \e[31m│\e[0m"
-#echo -e "\e[31m└───────────────────────────────────────────────┘\e[0m"
-#echo ""
 
-# -------------------------------
-# 1️⃣ Update & Install Required Packages  
-# -------------------------------
-echo -e "\e[1;33m[+] Updating Termux Packages...\e[0m"
+# Faster Unique IP Changer Script
+echo -e "\e[1;33m[+] Updating & Installing Dependencies...\e[0m"
 pkg update -y && pkg upgrade -y
-
-echo -e "\e[1;33m[+] Installing tor, privoxy, and curl...\e[0m"
 pkg install tor privoxy curl netcat-openbsd -y
 
-# -------------------------------
-# 2️⃣ Setup Environment  
-# -------------------------------
+# Set up Tor & Privoxy
 echo -e "\e[1;32m[+] Configuring Tor and Privoxy...\e[0m"
 pkill tor
 pkill privoxy
 rm -rf ~/.tor_multi ~/.privoxy
 mkdir -p ~/.tor_multi ~/.privoxy
 
-# -------------------------------
-# 3️⃣ Start Tor and Privoxy Services (Parallel Execution)
-# -------------------------------
-echo -e "\e[1;34m[+] Starting Tor Nodes & Proxy...\e[0m"
+# Define ports
 PORTS=(9050 9060 9070 9080 9090)
 CONTROL_PORTS=(9051 9061 9071 9081 9091)
 
+# Start multiple Tor instances
+echo -e "\e[1;34m[+] Starting Tor Nodes...\e[0m"
 for i in {0..4}; do
     TOR_DIR="$HOME/.tor_multi/tor$i"
     mkdir -p "$TOR_DIR"
-    cat <<EOF > "$TOR_DIR/torrc"
+    cat > "$TOR_DIR/torrc" <<EOF
 SocksPort ${PORTS[$i]}
 ControlPort ${CONTROL_PORTS[$i]}
 DataDirectory $TOR_DIR
 CookieAuthentication 0
+MaxCircuitDirtiness 10
 EOF
     tor -f "$TOR_DIR/torrc" > /dev/null 2>&1 &
-    sleep 1  # Faster startup
+    sleep 2
 done
 
-# Privoxy Setup  
-cat <<EOF > "$HOME/.privoxy/config"
+# Configure Privoxy
+cat > "$HOME/.privoxy/config" <<EOF
 listen-address 127.0.0.1:8118
 EOF
 for port in "${PORTS[@]}"; do
@@ -66,46 +57,44 @@ for port in "${PORTS[@]}"; do
 done
 privoxy "$HOME/.privoxy/config" > /dev/null 2>&1 &
 
-# -------------------------------
-# 4️⃣ IP Rotation Time Interval  
-# -------------------------------
+# IP Rotation Interval
 echo -ne "\e[1;36mEnter IP rotation interval (in seconds, min 3s): \e[0m"
 read -r ROTATION_TIME
-
 if [[ ! "$ROTATION_TIME" =~ ^[0-9]+$ ]] || [[ "$ROTATION_TIME" -lt 3 ]]; then
     echo -e "\e[1;31mInvalid input! Using default 5 seconds.\e[0m"
     ROTATION_TIME=5
 fi
 
-# -------------------------------
-# 5️⃣ Auto IP Changer with Verification  
-# -------------------------------
-LAST_IP=""
-
+# Unique IP Changing
+LAST_IPS=()
 while true; do
-    for ctrl_port in "${CONTROL_PORTS[@]}"; do
-        echo -e "AUTHENTICATE \"\"\r\nSIGNAL NEWNYM\r\nQUIT" | nc 127.0.0.1 $ctrl_port > /dev/null 2>&1
-    done
+    RANDOM_INDEX=$((RANDOM % ${#CONTROL_PORTS[@]}))
+    CTRL_PORT=${CONTROL_PORTS[$RANDOM_INDEX]}
 
-    # Wait briefly for Tor to apply the change
-    sleep 2  
+    echo -e "AUTHENTICATE \"\"\r\nSIGNAL NEWNYM\r\nQUIT" | nc 127.0.0.1 $CTRL_PORT > /dev/null 2>&1
+    sleep 2  # Allow Tor to refresh
 
-    # Fetch new IP
     NEW_IP=$(curl --proxy http://127.0.0.1:8118 -s https://api64.ipify.org)
 
-    # Verify IP has really changed
     if [[ -z "$NEW_IP" ]]; then
         echo -e "\e[1;31m⚠️ No IP detected! Retrying...\e[0m"
         sleep 2
         continue
-    elif [[ "$NEW_IP" == "$LAST_IP" ]]; then
-        echo -e "\e[1;33m⚠️ IP didn't change! Retrying immediately...\e[0m"
+    fi
+
+    # Ensure IP is unique
+    if [[ " ${LAST_IPS[*]} " =~ " $NEW_IP " ]]; then
+        echo -e "\e[1;33m⚠️ Repeated IP! Retrying...\e[0m"
         sleep 1
         continue
     fi
 
-    # Update last IP and display new IP
-    LAST_IP="$NEW_IP"
+    # Store last 5 IPs to avoid reuse
+    LAST_IPS+=("$NEW_IP")
+    if [[ ${#LAST_IPS[@]} -gt 5 ]]; then
+        LAST_IPS=("${LAST_IPS[@]:1}")
+    fi
+
     echo -e "\e[1;32m🌐 New IP: $NEW_IP ✅\e[0m"
     echo -e "\e[1;34m[Proxy]: 127.0.0.1:8118 🛰️\e[0m"
 
