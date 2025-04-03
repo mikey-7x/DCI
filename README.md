@@ -20,23 +20,14 @@ Watch the Dynamic Chameleon ip (DCI) setup and execution in action:
 ## **✨ Features**
 
 ✔ No VPN or Airplane Mode Required – Works without toggling airplane mode or using VPN services.
-
 ✔ Automated IP Rotation – Changes IP at user-defined intervals for enhanced anonymity.
-
 ✔ Multi-Tor Instance Setup – Uses multiple Tor circuits for faster and unique ip switching, more reliable IP changes.
-
 ✔ Smart IP Rotation – Prevents reuse of recent IPs to maintain uniqueness.
-
 ✔ Auto-Restart Mechanism – Ensures Tor and Privoxy run without manual intervention.
-
 ✔ Real-Time IP Check – Displays the new IP instantly after rotation.
-
 ✔ Visual Branding – Uses chafa to display a 3D chameleon logo in the terminal.
-
 ✔ Privoxy Proxy Support – Allows browser & app integration for seamless anonymous browsing.
-
 ✔ Works Directly in Termux – No need for a separate Linux environment.
-
 ✔ Lightweight & Fast Execution – Optimized for minimal resource usage.
 
 
