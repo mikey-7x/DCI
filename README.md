@@ -120,5 +120,5 @@ Developed by **[mikey-7x](https://github.com/mikey-7x)** 🚀🔥
 
  For queries, reach out via GitHub or forums!
 
-💡 "Stay Anonymous, Stay Secure!" 🔥
+💡 "Stay Anonymous, Stay Secure!" 
 
