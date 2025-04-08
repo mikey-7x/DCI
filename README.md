@@ -53,17 +53,23 @@ Download Termux from F-Droid (Recommended) or Play Store.
 
 Run the following command in Termux:
 
+```sh
 curl -L -o DCI.sh https://raw.githubusercontent.com/mikey-7x/DCI/main/DCI.sh
+```
 
 **🧩Step 3:** Give Execution Permission
 
+```sh
 chmod +x DCI.sh
+```
 
 **🧩Step 4:** Run the Script
 
 Start DCI by executing:
 
+```sh
 ./DCI.sh
+```
 
 The script will prompt you to enter an IP rotation interval (e.g., 10 seconds).
 
