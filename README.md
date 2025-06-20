@@ -117,9 +117,13 @@ Using multiple Tor instances enhances speed and reliability.
 
 ---
 
-## **📜 License**
+## 📄 License
 
-This project is open-source and free to use for educational and privacy purposes. 🚀
+This project is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+
+You are free to use, share, and adapt the content with attribution.
+
+---
 
 ## **📜 Credits**  
 Developed by **[mikey-7x](https://github.com/mikey-7x)** 🚀🔥  
