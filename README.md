@@ -128,6 +128,9 @@ You are free to use, share, and adapt the content with attribution.
 ## **📜 Credits**  
 Developed by **[mikey-7x](https://github.com/mikey-7x)** 🚀🔥  
 
+
+[other repository](https://github.com/mikey-7x?tab=repositories)
+
  For queries, reach out via GitHub or forums!
 
 💡 "Stay Anonymous, Stay Secure!" 
