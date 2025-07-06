@@ -4,11 +4,11 @@
 DCI is an advanced IP-changing script that dynamically alters your IP address at specified intervals using the Tor network. It enhances privacy, security, and anonymity while browsing the internet.
 
 
----
+
 
 ![Dynamic Chameleon IP](https://github.com/mikey-7x/DCI/blob/main/3D%20DCI.PNG?raw=true)
 
----
+
 
 ## **👁️‍🗨️Practical Implementation Video**  
 Watch the Dynamic Chameleon ip (DCI) setup and execution in action:  
